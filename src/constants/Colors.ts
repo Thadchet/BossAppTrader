@@ -24,3 +24,16 @@ export default {
     },
 };
 
+export const Colors = {
+    PRIMARY: "#3b5998",
+    SECONDANY: "#dfe3ee",
+    BACKGROUND_COLOR: "#F1F1F1",
+    POSITIVE : "#52C471",
+    NEGATIVE : "#FF6162",
+    WHITE : "#FFFFFF",
+    TEXT : "#3B3B3B",
+    TEXT_GRAY : "#A5A5A5",
+    LABEL_BACKGROUND : "#EEE"
+  };
+  
+

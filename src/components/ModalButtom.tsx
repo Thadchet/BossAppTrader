@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-
+import { Colors } from "../constants/Colors";
 export default function ModalButtom({
   isModalVisible,
   setIsMostGainEnable,
@@ -16,7 +16,7 @@ export default function ModalButtom({
   setIsMostGainEnable: any;
 }) {
   const [modalVisible, setModalVisible] = useState<boolean>(isModalVisible);
-
+  const [selectedSort, setSelectedSort] = useState<string>("");
   useEffect(() => {
     setModalVisible(true);
   }, [isModalVisible]);
@@ -34,12 +34,21 @@ export default function ModalButtom({
           <View key={index} style={styles.item}>
             <TouchableOpacity
               onPress={() => {
-                console.log("Most Lost");
                 setModalVisible(false);
                 setIsMostGainEnable(false);
+                setSelectedSort(title);
               }}
             >
-              <Text style={styles.text}>{title}</Text>
+              <Text
+                style={[
+                  styles.text,
+                  selectedSort === "Most Lost"
+                    ? styles.selected
+                    : styles.noselected,
+                ]}
+              >
+                {title}
+              </Text>
             </TouchableOpacity>
           </View>
         );
@@ -48,12 +57,21 @@ export default function ModalButtom({
           <View key={index} style={styles.item}>
             <TouchableOpacity
               onPress={() => {
-                console.log("Most Gain");
                 setModalVisible(false);
                 setIsMostGainEnable(true);
+                setSelectedSort(title);
               }}
             >
-              <Text style={styles.text}>{title}</Text>
+              <Text
+                style={[
+                  styles.text,
+                  selectedSort === "Most Gain"
+                    ? styles.selected
+                    : styles.noselected,
+                ]}
+              >
+                {title}
+              </Text>
             </TouchableOpacity>
           </View>
         );
@@ -145,4 +163,8 @@ const styles = StyleSheet.create({
   text: {
     color: "#908F8F",
   },
+  selected: {
+    color: Colors.PRIMARY,
+  },
+  noselected: {},
 });

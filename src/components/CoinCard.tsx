@@ -5,7 +5,7 @@ import { MAPPINGLOGO } from "../constants/MappingLogo";
 import TextLabel from "./TextLabel";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { formatBalance } from "../services/util";
-
+import { Colors } from "../constants/Colors";
 function CoinCard({
   navigation,
   coin,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   amount: {
     textAlign: "right",
-    color: "#6D6A6A",
+    color: Colors.TEXT,
     alignSelf: "center",
   },
   balance: {
@@ -139,14 +139,14 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   codeHighlightTextPositive: {
-    color: "#FFFFFF",
-    backgroundColor: "#60ce80",
+    color: Colors.WHITE,
+    backgroundColor: Colors.POSITIVE,
     fontSize: 13,
     fontWeight: "700",
   },
   codeHighlightTextNegative: {
-    color: "#FFFFFF",
-    backgroundColor: "#FF6162",
+    color: Colors.WHITE,
+    backgroundColor: Colors.NEGATIVE,
     fontSize: 13,
     fontWeight: "700",
   },

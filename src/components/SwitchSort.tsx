@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity, FlatList, Switch } from "react-native";
 import { Text, View } from "./Themed";
-
+import { Colors } from "../constants/Colors";
 function SwitchSort({
   isMostVolumnEnable,
   isMostGainEnable,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 20,
     paddingVertical: 20,
-    backgroundColor: "#F1F1F1",
+    backgroundColor: Colors.BACKGROUND_COLOR,
   },
   title: {
     fontFamily: "prompt",
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "flex-end",
-    backgroundColor: "#F1F1F1",
+    backgroundColor: Colors.BACKGROUND_COLOR,
   },
   switch: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#F1F1F1",
+    backgroundColor: Colors.BACKGROUND_COLOR,
   },
 });
 

@@ -7,7 +7,7 @@ import { addMyCoin } from "../actions/crypto.actions";
 import { Input, Button } from "react-native-elements";
 import { Picker } from "@react-native-picker/picker";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import { Colors } from "../constants/Colors";
 export default function AddCoinsScreen() {
   const dispatch = useDispatch();
   const { symbols } = useSelector((state: RootState) => state.crypto);
@@ -78,12 +78,11 @@ export default function AddCoinsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "#E6DEC6",
+    backgroundColor: Colors.BACKGROUND_COLOR,
   },
   groupInput: {
-    // backgroundColor: "#E6DEC6",
+    backgroundColor: Colors.BACKGROUND_COLOR,
     width: "80%",
     alignSelf: "center",
   },

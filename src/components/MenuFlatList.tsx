@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, Image, TouchableOpacity, Text, View } from "react-native";
-import { MAPPINGLOGO } from "../constants/MappingLogo";
-import { Ionicons, AntDesign, Fontisto } from "@expo/vector-icons";
-import { formatBalance } from "../services/util";
+import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
+import { Fontisto } from "@expo/vector-icons";
+import { Colors } from "../constants/Colors";
 
 function MenuFlatList({
   setModalVisible,
@@ -18,7 +17,7 @@ function MenuFlatList({
           <Text style={styles.title}>ALL</Text>
         </View>
         <View style={styles.button}>
-          <Fontisto name="star" size={16} color="#908F8F" />
+          <Fontisto name="star" size={16} color="#FFF" />
         </View>
       </View>
       <TouchableOpacity
@@ -40,14 +39,17 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row",
     justifyContent: "space-between",
+    backgroundColor: Colors.WHITE,
   },
   title: {
     fontSize: 14,
     fontFamily: "prompt",
     textAlign: "center",
+    color: Colors.WHITE,
   },
   button: {
-    backgroundColor: "#eee",
+    // backgroundColor: Colors.LABEL_BACKGROUND,
+    backgroundColor: Colors.PRIMARY,
     marginHorizontal: 5,
     padding: 3,
     width: 50,
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   rightButton: {
-    backgroundColor: "#eee",
+    backgroundColor: Colors.PRIMARY,
     marginHorizontal: 10,
     padding: 3,
     width: 130,

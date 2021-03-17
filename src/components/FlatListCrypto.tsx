@@ -10,6 +10,7 @@ import {
 import { formatVolumn } from "../services/util";
 import { MAPPINGLOGO } from "../constants/MappingLogo";
 import MenuFlatList from "./MenuFlatList";
+import { Colors } from "../constants/Colors";
 
 function FlatListCrypto({
   isMostVolumnEnable,
@@ -67,6 +68,7 @@ function FlatListCrypto({
               borderTopLeftRadius: 35,
               paddingHorizontal: 20,
               paddingTop: 20,
+              backgroundColor: Colors.WHITE,
             }}
           >
             <Text style={styles.titleMarget}>Marget</Text>
@@ -136,7 +138,7 @@ function FlatListCrypto({
                 ]}
               >
                 <Text style={styles.price}>{last}</Text>
-                <Text
+                <View
                   style={[
                     !isPercentPositive(last, prevOpen)
                       ? styles.codeHighlightTextPositive
@@ -144,10 +146,12 @@ function FlatListCrypto({
                     styles.codeHighlightContainer,
                   ]}
                 >
-                  {`${
-                    isPercentPositive(last, prevOpen) ? `` : `+`
-                  }${percentChange} %`}
-                </Text>
+                  <Text style={{color : Colors.WHITE}}>
+                    {`${
+                      isPercentPositive(last, prevOpen) ? `` : `+`
+                    }${percentChange} %`}
+                  </Text>
+                </View>
               </View>
             </View>
           </TouchableOpacity>
@@ -171,7 +175,7 @@ function FlatListCrypto({
     prevOpen: any;
     baseVolume: number;
   }) => (
-    <View key={index} style={{ backgroundColor: "#F1F1F1" }}>
+    <View key={index}>
       {renderItemByIndex(
         index,
         percentChange,
@@ -212,6 +216,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: Colors.WHITE,
   },
   container: {
     padding: 20,
@@ -225,52 +230,44 @@ const styles = StyleSheet.create({
   leftStatus: {
     alignItems: "flex-start",
   },
-  positive: {
-    // backgroundColor: "#565252",
-    // borderWidth: 2,
-    // borderColor: "#52C471",
-  },
-  negative: {
-    // backgroundColor: "#565252",
-    // borderWidth: 2,
-    // borderColor: "#FA5F55",
-  },
+  positive: {},
+  negative: {},
   title: {
     fontSize: 12,
     fontFamily: "prompt",
-    color: "#3B3B3B",
+    color: Colors.TEXT,
   },
   namecoin: {
     fontSize: 16,
     fontFamily: "prompt",
-    color: "#3B3B3B",
+    color: Colors.TEXT,
     fontWeight: "800",
   },
   volumn: {
     fontSize: 12,
     fontFamily: "prompt",
-    color: "#A5A5A5",
+    color: Colors.TEXT_GRAY,
     fontWeight: "600",
   },
   price: {
     fontSize: 14,
     fontFamily: "prompt",
     padding: 3,
-    color: "#3B3B3B",
+    color: Colors.TEXT,
   },
   codeHighlightTextPositive: {
-    color: "#FFFFFF",
-    backgroundColor: "#60ce80",
+    color: Colors.WHITE,
+    backgroundColor: Colors.POSITIVE,
     fontSize: 12,
   },
   codeHighlightTextNegative: {
-    color: "#FFFFFF",
-    backgroundColor: "#FF6162",
+    color: Colors.WHITE,
+    backgroundColor: Colors.NEGATIVE,
     fontSize: 12,
   },
   codeHighlightContainer: {
-    borderRadius: 3,
-    padding: 2,
+    padding: 5,
+    borderRadius: 10,
   },
   tinyLogo: {
     width: 30,

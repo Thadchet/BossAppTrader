@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-
+import { Colors } from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import MyBalancesScreen from "../screens/MyBalancesScreen";
 import AddCoinsScreen from "../screens/AddCoinsScreen";
@@ -19,7 +19,7 @@ export default function MainTabNavigator() {
         options={{
           headerTitle: "Balance",
           headerStyle: {
-            backgroundColor: "#F1F1F1",
+            backgroundColor: Colors.BACKGROUND_COLOR,
             shadowOpacity: 0, // remove shadow on iOS
           },
         }}
@@ -30,7 +30,7 @@ export default function MainTabNavigator() {
         options={{
           headerTitle: "AddCoin",
           headerStyle: {
-            backgroundColor: "#F1F1F1",
+            backgroundColor: Colors.BACKGROUND_COLOR,
             shadowOpacity: 0, // remove shadow on iOS
           },
         }}
@@ -41,7 +41,7 @@ export default function MainTabNavigator() {
         options={{
           headerTitle: "Coin",
           headerStyle: {
-            backgroundColor: "#F1F1F1",
+            backgroundColor: Colors.BACKGROUND_COLOR,
             shadowOpacity: 0, // remove shadow on iOS
           },
         }}

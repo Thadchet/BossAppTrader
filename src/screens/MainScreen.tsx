@@ -12,6 +12,7 @@ import {
 } from "../actions/crypto.actions";
 import { values, findIndex, map } from "lodash";
 import { Input, Button } from "react-native-elements";
+import { Colors } from "../constants/Colors";
 
 const wait = (timeout: any) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
@@ -87,9 +88,8 @@ export default function MainScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#F1F1F1",
+    backgroundColor: Colors.BACKGROUND_COLOR,
   },
   title: {
     fontSize: 20,

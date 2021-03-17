@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 
-import Colors from "../constants/Colors";
+import { Colors } from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import MainTabNavigator from "./MainTabNavigator";
 import ByBalancesTabNavigator from "./MyBalancesTabNavigator";
@@ -16,7 +16,7 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+      tabBarOptions={{ activeTintColor: Colors.PRIMARY }}
     >
       <BottomTab.Screen
         name="Price"

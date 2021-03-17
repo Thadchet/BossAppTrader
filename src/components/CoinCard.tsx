@@ -35,7 +35,7 @@ function CoinCard({
     return (currentPrice - coin.Price) * coin.Amount > 0;
   };
   return (
-    <TouchableOpacity onPress={changeScreenToCoinManagement}>
+    <TouchableOpacity key={coin.ID} onPress={changeScreenToCoinManagement}>
       <View key={coin.ID} style={styles.container}>
         <View style={styles.balance}>
           <Image
@@ -139,14 +139,14 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   codeHighlightTextPositive: {
-    color: "#088306",
-    backgroundColor: "#B6EFA9",
+    color: "#FFFFFF",
+    backgroundColor: "#60ce80",
     fontSize: 13,
     fontWeight: "700",
   },
   codeHighlightTextNegative: {
-    color: "#F44D2D",
-    backgroundColor: "#F8C3B9",
+    color: "#FFFFFF",
+    backgroundColor: "#FF6162",
     fontSize: 13,
     fontWeight: "700",
   },

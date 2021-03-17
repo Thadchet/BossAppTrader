@@ -3,9 +3,15 @@ import { StyleSheet, RefreshControl } from "react-native";
 import { View } from "../components/Themed";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../reducers";
-import { FlatListCrypto, SwitchSort } from "../components";
-import { getTicker, getSymbols, getMyBalance } from "../actions/crypto.actions";
+import { FlatListCrypto, ModalButtom } from "../components";
+import {
+  getTicker,
+  getSymbols,
+  getMyBalance,
+  getMyCoin,
+} from "../actions/crypto.actions";
 import { values, findIndex, map } from "lodash";
+import { Input, Button } from "react-native-elements";
 
 const wait = (timeout: any) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
@@ -14,8 +20,9 @@ const wait = (timeout: any) => {
 export default function MainScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [cryptoTickerArray, setCryptoTickerArray] = useState<any>([]);
-  const [isMostVolumnEnable, setIsMostVolumnEnable] = useState<boolean>(true);
+  const [isMostVolumnEnable, setIsMostVolumnEnable] = useState<boolean>(false);
   const [isMostGainEnable, setIsMostGainEnable] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
   const dispatch = useDispatch();
   const { cryptoListTicker, symbols } = useSelector(
     (state: RootState) => state.crypto
@@ -30,6 +37,9 @@ export default function MainScreen() {
   useEffect(() => {
     dispatch(getSymbols());
     dispatch(getTicker());
+
+    dispatch(getMyBalance());
+    dispatch(getMyCoin());
   }, []);
 
   useEffect(() => {
@@ -54,19 +64,21 @@ export default function MainScreen() {
   };
   return (
     <View style={styles.container}>
-      <SwitchSort
-        isMostVolumnEnable={isMostVolumnEnable}
-        isMostGainEnable={isMostGainEnable}
-        setIsMostVolumnEnable={setIsMostVolumnEnable}
+      {cryptoTickerArray.length !== 0 && (
+        <FlatListCrypto
+          isMostVolumnEnable={isMostVolumnEnable}
+          isMostGainEnable={isMostGainEnable}
+          isModalVisible={isModalVisible}
+          setModalVisible={setIsModalVisible}
+          cryptoListTicker={cryptoTickerArray}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        />
+      )}
+      <ModalButtom
+        isModalVisible={isModalVisible}
         setIsMostGainEnable={setIsMostGainEnable}
-      />
-      <FlatListCrypto
-        isMostVolumnEnable={isMostVolumnEnable}
-        isMostGainEnable={isMostGainEnable}
-        cryptoListTicker={cryptoTickerArray}
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
       />
     </View>
   );
@@ -77,7 +89,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#E6DEC6",
+    backgroundColor: "#F1F1F1",
   },
   title: {
     fontSize: 20,

@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 20,
     paddingVertical: 20,
-    backgroundColor: "#E6DEC6",
+    backgroundColor: "#F1F1F1",
   },
   title: {
     fontFamily: "prompt",
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "flex-end",
-    backgroundColor: "#E6DEC6",
+    backgroundColor: "#F1F1F1",
   },
   switch: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#E6DEC6",
+    backgroundColor: "#F1F1F1",
   },
 });
 

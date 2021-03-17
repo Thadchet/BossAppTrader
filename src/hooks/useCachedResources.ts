@@ -20,6 +20,8 @@ export default function useCachedResources() {
           'promptBold': require('../assets/fonts/Prompt-Bold.ttf'),
           'promptExtraBold': require('../assets/fonts/Prompt-ExtraBold.ttf'),
         });
+
+
       } catch (e) {
         // We might want to provide this error information to an error reporting service
         console.warn(e);

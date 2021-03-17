@@ -95,14 +95,14 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   codeHighlightTextPositive: {
-    color: "#088306",
-    backgroundColor: "#B6EFA9",
+    color: "#FFFFFF",
+    backgroundColor: "#60ce80",
     fontSize: 13,
     fontWeight: "700",
   },
   codeHighlightTextNegative: {
-    color: "#F44D2D",
-    backgroundColor: "#F8C3B9",
+    color: "#FFFFFF",
+    backgroundColor: "#FF6162",
     fontSize: 13,
     fontWeight: "700",
   },

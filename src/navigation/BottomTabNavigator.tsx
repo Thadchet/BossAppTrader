@@ -1,11 +1,12 @@
-import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import * as React from "react";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import MainTabNavigator from "./MainTabNavigator";
-import ByBalancesTabNavigator from "./ByBalancesTabNavigator";
+import ByBalancesTabNavigator from "./MyBalancesTabNavigator";
+import SummaryTabNavigator from "./SummaryTabNavigator";
+import { Fontisto, Ionicons, Entypo } from "@expo/vector-icons";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ export default function BottomTabNavigator() {
         component={MainTabNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <Fontisto name="money-symbol" size={24} color={color} />
           ),
         }}
       />
@@ -31,7 +32,16 @@ export default function BottomTabNavigator() {
         component={ByBalancesTabNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="ios-code" color={color} />
+            <Ionicons name="wallet-outline" size={24} color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Summary"
+        component={SummaryTabNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Entypo name="bar-graph" size={24} color={color} />
           ),
         }}
       />

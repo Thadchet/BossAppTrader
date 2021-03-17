@@ -21,9 +21,7 @@ export default function ByBalancesScrren({ navigation }: { navigation: any }) {
   const [myCryptoPrice, setMyCryptoPrice] = useState<Object>({});
   const [refreshing, setRefreshing] = useState(false);
   const dispatch = useDispatch();
-  const { myCoin, myBalance } = useSelector(
-    (state: RootState) => state.crypto
-  );
+  const { myCoin, myBalance } = useSelector((state: RootState) => state.crypto);
   const changeScreenToAddCoin = () => {
     navigation.navigate("AddCoins");
   };
@@ -103,13 +101,6 @@ export default function ByBalancesScrren({ navigation }: { navigation: any }) {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <Button
-          title="Debug"
-          onPress={() => {
-            console.log(myCryptoPrice);
-            console.log(myCoin);
-          }}
-        />
         <MyBalance myBalance={myBalance} totalProfit={calculateTotalProfit} />
         {Object.keys(myCryptoPrice).length !== 0 &&
           myCoin.map((item: any) => (
@@ -129,7 +120,6 @@ export default function ByBalancesScrren({ navigation }: { navigation: any }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
     backgroundColor: "#F1F1F1",
   },
   groupInput: {

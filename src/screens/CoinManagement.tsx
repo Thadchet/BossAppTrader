@@ -50,12 +50,6 @@ export default function CoinManagement({
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Button
-          title="Add Coin"
-          onPress={() => {
-            console.log(route.params);
-          }}
-        />
         <CoinCardManagement
           currentPrice={route.params.currentPrice}
           nameCoin={route.params.coin.NameCoin}

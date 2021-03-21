@@ -12,4 +12,4 @@ web-build/
 # macOS
 .DS_Store
 
-src/constants/Config
+src/constants/Config.ts

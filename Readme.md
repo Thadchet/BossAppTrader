@@ -26,6 +26,6 @@ Please make sure to update tests as appropriate.
 
 ## Sample
 
-![Main](https://github.com/Thadchet/BossAppTrader/blob/master/img/main.png?raw=true)
+<!-- ![Main](https://github.com/Thadchet/BossAppTrader/blob/master/img/main.png?raw=true)
 ![MyBalance](https://github.com/Thadchet/BossAppTrader/blob/master/img/trade.png?raw=true)
-![Dashboard](https://github.com/Thadchet/BossAppTrader/blob/master/img/dashboard.png?raw=true)
+![Dashboard](https://github.com/Thadchet/BossAppTrader/blob/master/img/dashboard.png?raw=true) -->
